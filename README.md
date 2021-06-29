@@ -1,2 +1,2 @@
-# galera_kubernes
+# galera_kubernetes
 galera startup file
