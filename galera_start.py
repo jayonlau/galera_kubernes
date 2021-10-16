@@ -665,6 +665,7 @@ def check_if_cluster_data_is_fresh():
         sample_time = iso8601.parse_date(value).replace(tzinfo=None)
         sample_cutoff_time = datetime.utcnow().replace(
             tzinfo=None) - timedelta(seconds=20)
+        #超过20s没有更新configmap的sample_time就会报错too old。
         if not sample_time >= sample_cutoff_time:
             logger.info(
                 "The data we have from the cluster is too old to make a "
