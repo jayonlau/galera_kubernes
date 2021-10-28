@@ -754,6 +754,7 @@ def check_if_i_lead():
 
 def monitor_cluster():
     """Function to kick off grastate configmap updating thread"""
+    """默认10S更新一次configmap信息"""
     while True:
         try:
             update_grastate_configmap()
